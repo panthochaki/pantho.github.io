@@ -1,0 +1,1089 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pantho Chaki | Seamless Knit Design Engineer (Santoni SM8-TOP2V)</title>
+  <meta name="description" content="Pantho Chaki — Seamless Knit Design Engineer. Santoni SM8-TOP2V (28G), iPolaris. Santoni School Italy trained (80 hours). Bulk stability, GSM & stretch control, compression mapping." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#050814;
+      --panel:rgba(17,24,39,.72);
+      --panel2:rgba(17,24,39,.45);
+      --border:rgba(255,255,255,.10);
+      --text:#f4f7ff;
+      --muted:#a9b1c2;
+      --accent:#22d3ee;
+      --accent2:#818cf8;
+      --good:#34d399;
+      --shadow:0 22px 60px rgba(0,0,0,.55);
+      --transition:all .45s cubic-bezier(.23,1,.32,1);
+      --radius:28px;
+      --max:1200px;
+      --focus:0 0 0 4px rgba(34,211,238,.14);
+    }
+    html[data-theme="light"]{
+      --bg:#f7f9ff;
+      --panel:rgba(255,255,255,.75);
+      --panel2:rgba(255,255,255,.55);
+      --border:rgba(15,23,42,.10);
+      --text:#0b1220;
+      --muted:#516075;
+      --accent:#0891b2;
+      --accent2:#4f46e5;
+      --shadow:0 18px 45px rgba(2,6,23,.12);
+      --focus:0 0 0 4px rgba(8,145,178,.14);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Plus Jakarta Sans',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    .container{width:min(var(--max),92%);margin:0 auto}
+    .section{padding:100px 0}
+    .grid{display:grid;gap:28px}
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .soft{
+      background:var(--panel2);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+    }
+    button,a,input,textarea{outline:none}
+    button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{box-shadow:var(--focus);border-radius:16px}
+
+    /* Background */
+    .mesh-wrap{position:fixed;inset:0;z-index:-1;overflow:hidden}
+    .mesh{position:absolute;width:900px;height:900px;filter:blur(90px);opacity:.45;background:radial-gradient(circle, rgba(34,211,238,.22) 0%, transparent 65%)}
+    .mesh.m1{top:-240px;left:-220px}
+    .mesh.m2{bottom:-260px;right:-250px;opacity:.38;background:radial-gradient(circle, rgba(129,140,248,.22) 0%, transparent 65%)}
+    .noise{
+      position:absolute;inset:0;opacity:.06;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+      mix-blend-mode:overlay;pointer-events:none;
+    }
+
+    /* Nav */
+    .topbar{position:fixed;top:18px;left:0;width:100%;z-index:999}
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:10px 18px;border-radius:999px;
+      background:var(--panel);border:1px solid var(--border);backdrop-filter:blur(14px);
+      box-shadow:var(--shadow);
+      transition:var(--transition);
+    }
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;letter-spacing:.2px}
+    .mark{
+      width:40px;height:40px;border-radius:14px;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#000;font-weight:900;box-shadow:0 16px 35px rgba(34,211,238,.18);user-select:none;
+    }
+    .navlinks{display:flex;align-items:center;gap:6px}
+    .navlinks a{
+      text-decoration:none;padding:10px 14px;border-radius:999px;
+      color:var(--muted);font-weight:900;font-size:.92rem;transition:var(--transition);
+    }
+    .navlinks a:hover,.navlinks a.active{color:var(--text);background:rgba(255,255,255,.06)}
+    html[data-theme="light"] .navlinks a:hover, html[data-theme="light"] .navlinks a.active{background:rgba(2,6,23,.06)}
+    .navactions{display:flex;align-items:center;gap:10px}
+    .iconbtn{
+      width:42px;height:42px;border-radius:16px;display:grid;place-items:center;
+      border:1px solid var(--border);background:transparent;color:var(--text);
+      cursor:pointer;transition:var(--transition);
+    }
+    .iconbtn:hover{transform:translateY(-2px);background:rgba(255,255,255,.06)}
+    html[data-theme="light"] .iconbtn:hover{background:rgba(2,6,23,.06)}
+    .burger{display:none}
+
+    /* Hero */
+    .hero{padding:120px 0 70px}
+    .hero-grid{grid-template-columns:1.25fr .75fr;align-items:center}
+    .kicker{
+      display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;
+      background:rgba(34,211,238,.10);border:1px solid rgba(34,211,238,.22);
+      color:var(--accent);font-weight:950;font-size:.78rem;letter-spacing:.5px;margin-bottom:18px;
+    }
+    .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(34,211,238,.28);animation:pulse 2s infinite}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,211,238,.28)}70%{box-shadow:0 0 0 14px rgba(34,211,238,0)}100%{box-shadow:0 0 0 0 rgba(34,211,238,0)}}
+    .h1{font-size:clamp(2.7rem,6vw,4.6rem);line-height:1.03;font-weight:950;letter-spacing:-2px;margin-bottom:14px}
+    .h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .role{font-size:1.18rem;color:var(--muted);margin-bottom:18px;max-width:64ch}
+    .hero-highlights{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 26px}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;
+      border:1px solid var(--border);background:rgba(255,255,255,.04);
+      color:var(--text);font-weight:900;font-size:.88rem;
+    }
+    html[data-theme="light"] .pill{background:rgba(2,6,23,.03)}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:14px 18px;border-radius:18px;text-decoration:none;border:1px solid transparent;
+      font-weight:950;cursor:pointer;transition:var(--transition);user-select:none;white-space:nowrap;
+    }
+    .btn.primary{background:var(--accent);color:#001016}
+    .btn.primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(34,211,238,.22)}
+    .btn.ghost{background:rgba(255,255,255,.04);border-color:var(--border);color:var(--text)}
+    html[data-theme="light"] .btn.ghost{background:rgba(2,6,23,.03)}
+    .btn.ghost:hover{transform:translateY(-3px)}
+    .btn.linkedin{background:#0077b5;color:#fff}
+    .btn.linkedin:hover{transform:translateY(-3px);box-shadow:0 16px 35px rgba(0,119,181,.22)}
+    .btn.cv{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#001016}
+    .btn.cv:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(129,140,248,.18)}
+
+    .hero-right{position:relative}
+    .profile{padding:14px;border-radius:34px;transform:rotate(1.5deg);transition:var(--transition)}
+    .profile:hover{transform:rotate(0deg) scale(1.02)}
+    .profile img{width:100%;display:block;border-radius:22px;filter:saturate(.92) contrast(1.02)}
+    .proofbar{margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .proof{padding:14px;border-radius:22px;background:rgba(255,255,255,.04);border:1px solid var(--border)}
+    html[data-theme="light"] .proof{background:rgba(2,6,23,.03)}
+    .proof b{display:block;font-size:1.05rem;font-weight:950}
+    .proof span{color:var(--muted);font-weight:850;font-size:.88rem}
+
+    /* Section headers */
+    .head{margin-bottom:26px}
+    .head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);letter-spacing:-1px;font-weight:950;margin-bottom:8px}
+    .head p{color:var(--muted);font-weight:800;max-width:70ch}
+
+    /* Authority */
+    .authority{grid-template-columns:1.05fr .95fr;align-items:stretch}
+    .authority .card{padding:34px}
+    .badgebox{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+    .seal{
+      width:58px;height:58px;border-radius:18px;background:#fff;display:grid;place-items:center;
+      box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);overflow:hidden;
+    }
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 18px}
+    .meta .tag{padding:8px 12px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.04);font-weight:950;font-size:.88rem}
+    html[data-theme="light"] .meta .tag{background:rgba(2,6,23,.03)}
+    .list{list-style:none;margin-top:12px}
+    .list li{display:flex;gap:10px;margin:10px 0;color:var(--muted);font-weight:850}
+    .list li::before{content:"→";color:var(--accent);font-weight:950}
+
+    /* Brands */
+    .brands{padding:26px 26px 10px}
+    .brandgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:14px}
+    .brandchip{
+      padding:14px 12px;border-radius:18px;border:1px solid var(--border);
+      background:rgba(255,255,255,.03);text-align:center;font-weight:950;color:var(--text);transition:var(--transition)
+    }
+    html[data-theme="light"] .brandchip{background:rgba(2,6,23,.02)}
+    .brandchip:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.35)}
+    .brandchip small{display:block;margin-top:4px;color:var(--muted);font-weight:850}
+
+    /* Tabs */
+    .tabs{display:flex;gap:10px;margin:18px 0 26px;flex-wrap:wrap}
+    .tab{
+      padding:10px 16px;border-radius:999px;border:1px solid var(--border);
+      background:transparent;font-weight:950;color:var(--muted);
+      cursor:pointer;transition:var(--transition);
+    }
+    .tab.active{background:var(--accent);color:#001016;border-color:transparent}
+    .tab:hover{transform:translateY(-2px)}
+    .tab-view{display:none}
+    .tab-view.active{display:grid}
+    .cases-grid{
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:28px;
+    }
+
+    /* Case cards */
+    .case{overflow:hidden;cursor:pointer;transition:var(--transition)}
+    .case:hover{transform:translateY(-8px);border-color:rgba(34,211,238,.35)}
+    .case .img{height:190px;background:#000;position:relative;overflow:hidden}
+    .case .img img{width:100%;height:100%;object-fit:cover;opacity:.92;transition:transform .7s ease}
+    .case:hover .img img{transform:scale(1.08)}
+    .case .body{padding:20px 20px 22px}
+    .status{
+      display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:950;letter-spacing:.6px;
+      text-transform:uppercase;padding:6px 10px;border-radius:999px;border:1px solid rgba(34,211,238,.40);
+      color:var(--accent);margin-bottom:10px;
+    }
+    .case h3{font-size:1.1rem;font-weight:950;margin-bottom:8px}
+    .case p{color:var(--muted);font-weight:850}
+    .mini{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .mini span{padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.03);font-weight:950;font-size:.82rem;color:var(--text)}
+    html[data-theme="light"] .mini span{background:rgba(2,6,23,.02)}
+
+    /* Workflow */
+    .wf{grid-template-columns:340px 1fr}
+    .wf-side{padding:22px}
+    .wf-btn{
+      width:100%;display:flex;align-items:center;gap:14px;padding:12px;border-radius:18px;
+      background:transparent;border:1px solid transparent;color:var(--muted);font-weight:950;
+      cursor:pointer;transition:var(--transition);text-align:left;
+    }
+    .wf-btn:hover{background:rgba(255,255,255,.04);border-color:var(--border)}
+    html[data-theme="light"] .wf-btn:hover{background:rgba(2,6,23,.03)}
+    .wf-btn.active{background:rgba(255,255,255,.06);border-color:rgba(34,211,238,.25);color:var(--text)}
+    html[data-theme="light"] .wf-btn.active{background:rgba(2,6,23,.04)}
+    .num{
+      width:32px;height:32px;border-radius:12px;display:grid;place-items:center;
+      background:rgba(255,255,255,.06);border:1px solid var(--border);font-size:.82rem;flex-shrink:0;user-select:none
+    }
+    .wf-btn.active .num{background:var(--accent);color:#001016;border-color:transparent}
+    .wf-body{padding:34px}
+    .wf-body h3{font-size:1.7rem;font-weight:950;margin-bottom:10px;letter-spacing:-.6px}
+    .wf-body p{color:var(--muted);font-weight:850;font-size:1.05rem;line-height:1.75}
+    .wf-body .check{margin-top:16px;display:grid;gap:10px}
+    .check div{display:flex;gap:10px;color:var(--muted);font-weight:850}
+    .check div::before{content:"✓";color:var(--good);font-weight:950}
+
+    /* Experience */
+    .exp{grid-template-columns:1fr}
+    .exp-card{padding:26px}
+    .exp-top{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:12px}
+    .exp-title{font-size:1.2rem;font-weight:950}
+    .exp-sub{color:var(--muted);font-weight:900}
+    .exp-bullets{list-style:none;margin-top:12px}
+    .exp-bullets li{display:flex;gap:10px;margin:10px 0;color:var(--muted);font-weight:850}
+    .exp-bullets li::before{content:"•";color:var(--accent);font-weight:950;font-size:1.3rem;line-height:1}
+
+    /* Skills */
+    .skills{grid-template-columns:repeat(3,1fr)}
+    .skill{padding:22px}
+    .skill h4{font-size:1.05rem;font-weight:950;margin-bottom:10px}
+    .skill p{color:var(--muted);font-weight:850}
+    .skill .bar{height:10px;border-radius:999px;margin-top:14px;background:rgba(255,255,255,.06);border:1px solid var(--border);overflow:hidden}
+    .skill .bar span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0%;transition:width 1.2s cubic-bezier(.23,1,.32,1)}
+
+    /* Contact */
+    .contact{grid-template-columns:1.05fr .95fr}
+    .form{padding:26px}
+    .field{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+    label{font-weight:950;font-size:.88rem;color:var(--muted)}
+    input,textarea{
+      background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:18px;
+      padding:14px 14px;color:var(--text);font:inherit;transition:var(--transition)
+    }
+    html[data-theme="light"] input, html[data-theme="light"] textarea{background:rgba(2,6,23,.02)}
+    input:focus,textarea:focus{border-color:rgba(34,211,238,.45);box-shadow:var(--focus)}
+    .contactbox{padding:26px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#001016;border:none}
+    .contactbox h3{font-size:1.4rem;font-weight:950;margin-bottom:10px}
+    .contactbox p{font-weight:900;opacity:.9;margin-bottom:14px}
+    .contactitem{padding:14px;border-radius:18px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25)}
+    .contactitem small{display:block;opacity:.85;font-weight:950;text-transform:uppercase;letter-spacing:.8px;font-size:.72rem}
+    .contactitem b{display:block;margin-top:6px;font-weight:950;font-size:1.02rem}
+    .contactactions{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+    .contactactions a{background:#001016;color:#fff;border:none}
+    .contactactions a:hover{transform:translateY(-3px)}
+    .footer{padding:60px 0;border-top:1px solid var(--border);color:var(--muted);font-weight:900;text-align:center}
+
+    /* Modal */
+    .modal{position:fixed;inset:0;display:none;z-index:5000;background:rgba(0,0,0,.92);backdrop-filter:blur(18px);padding:18px;align-items:center;justify-content:center}
+    .modal.active{display:flex}
+    .modal-card{
+      width:min(1050px,100%);max-height:92vh;border-radius:34px;overflow:hidden;
+      background:var(--panel);border:1px solid var(--border);display:grid;grid-template-columns:1.05fr .95fr;
+      box-shadow:0 30px 80px rgba(0,0,0,.65);
+    }
+    .m-left{background:#000}
+    .m-left img{width:100%;height:100%;object-fit:cover;display:block}
+    .m-right{padding:34px;overflow:auto}
+    .m-right h2{font-size:2rem;font-weight:950;letter-spacing:-1px;margin:10px 0 12px}
+
+    /* ✅ Modal text (LIKE YOUR 2ND PIC) */
+    .m-meta{
+      font-weight:900;
+      color:var(--muted);
+      margin-bottom:14px;
+      line-height:1.55;
+    }
+    .m-subhead{
+      font-size:1.05rem;
+      font-weight:950;
+      margin:14px 0 8px;
+    }
+    .m-desc{
+      margin-top:14px;
+      font-weight:850;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .m-ul{list-style:none;margin:10px 0 12px}
+    .m-ul li{display:flex;gap:10px;margin:10px 0;color:var(--muted);font-weight:850}
+    .m-ul li::before{content:"•";color:var(--accent);font-weight:950;font-size:1.35rem;line-height:1}
+
+    .m-close{
+      position:absolute;top:22px;right:22px;width:44px;height:44px;border-radius:50%;
+      border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);
+      color:#fff;font-size:1.6rem;cursor:pointer;display:grid;place-items:center;
+    }
+    .m-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .m-actions a{border-radius:18px}
+
+    /* Reveal */
+    [data-reveal]{opacity:0;transform:translateY(26px);transition:1s cubic-bezier(.23,1,.32,1)}
+    [data-reveal].visible{opacity:1;transform:translateY(0)}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .navlinks{display:none}
+      .burger{display:grid}
+      .hero-grid,.authority,.wf,.contact,.modal-card{grid-template-columns:1fr}
+      .proofbar{grid-template-columns:repeat(3,1fr)}
+      .skills{grid-template-columns:1fr}
+      .brandgrid{grid-template-columns:repeat(2,1fr)}
+      .m-right{padding:22px}
+    }
+    @media (max-width:520px){
+      .proofbar{grid-template-columns:1fr}
+      .btn{width:100%}
+    }
+
+    /* Mobile menu */
+    .sheet{position:fixed;inset:0;z-index:1200;display:none;background:rgba(0,0,0,.72);backdrop-filter:blur(10px);align-items:flex-end;justify-content:center;padding:16px}
+    .sheet.active{display:flex}
+    .sheet-card{width:min(720px,100%);border-radius:26px;background:var(--panel);border:1px solid var(--border);padding:14px;box-shadow:var(--shadow)}
+    .sheet a{
+      display:flex;align-items:center;justify-content:space-between;padding:14px;border-radius:18px;
+      text-decoration:none;font-weight:950;color:var(--text);border:1px solid transparent;
+    }
+    .sheet a:hover{background:rgba(255,255,255,.06);border-color:var(--border)}
+    html[data-theme="light"] .sheet a:hover{background:rgba(2,6,23,.06)}
+    .sheet .x{margin-top:10px}
+  </style>
+</head>
+
+<body>
+  <div class="mesh-wrap" aria-hidden="true">
+    <div class="mesh m1"></div>
+    <div class="mesh m2"></div>
+    <div class="noise"></div>
+  </div>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="container">
+      <nav class="nav" id="nav">
+        <a class="brand" href="#home" aria-label="Home">
+          <div class="mark">P</div>
+          <div>
+            <div style="font-size:.98rem;font-weight:950;line-height:1.1">Pantho Chaki</div>
+            <div style="font-size:.78rem;color:var(--muted);font-weight:900;line-height:1.1">Seamless Knit Design Engineer</div>
+          </div>
+        </a>
+
+        <div class="navlinks" aria-label="Primary">
+          <a href="#authority">About</a>
+          <a href="#brands">Brands</a>
+          <a href="#work">Case Studies</a>
+          <a href="#workflow">Workflow</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="navactions">
+          <button class="iconbtn" id="themeToggle" aria-label="Toggle Theme" title="Theme">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 3c.132 0 .263 0 .393.007a9 9 0 0 0 7.5 15.147 9 9 0 0 1-13.89-10.15 9 9 0 0 1 5.997-4.997c.132 0 .263 0 .393 0z"/>
+            </svg>
+          </button>
+          <button class="iconbtn burger" id="openMenu" aria-label="Open menu" title="Menu">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile sheet -->
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="sheet-card">
+      <a href="#authority" class="sheetLink">About <span>→</span></a>
+      <a href="#brands" class="sheetLink">Brands <span>→</span></a>
+      <a href="#work" class="sheetLink">Case Studies <span>→</span></a>
+      <a href="#workflow" class="sheetLink">Workflow <span>→</span></a>
+      <a href="#experience" class="sheetLink">Experience <span>→</span></a>
+      <a href="#skills" class="sheetLink">Skills <span>→</span></a>
+      <a href="#contact" class="sheetLink">Contact <span>→</span></a>
+      <button class="btn ghost x" id="closeMenu" style="width:100%" type="button">Close</button>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container grid hero-grid">
+      <div data-reveal>
+        <div class="kicker"><span class="pulse"></span> Available for Global Seamless Projects</div>
+        <div class="h1">PANTHO <span>CHAKI</span></div>
+
+        <div class="role">
+          Seamless Knit Design Engineer — <b>Santoni SM8-TOP2V (28G)</b> & <b>iPolaris</b> Specialist
+          Focused on <b>performance sportswear</b>, <b>engineered seamless fabrics</b>, <b>bulk stability</b>,
+          <b>GSM & stretch control</b>, and <b>compression mapping</b>.
+        </div>
+
+        <div class="hero-highlights">
+          <span class="pill">Santoni School, Italy • Feb 2025</span>
+          <span class="pill">80-Hour Intensive Training</span>
+          <span class="pill">3+ Years Industrial Experience</span>
+          <span class="pill">Bangladesh • Fakhruddin Textile Mills Ltd.</span>
+        </div>
+
+        <div class="cta">
+          <a class="btn primary" href="#work">View Case Studies</a>
+          <a class="btn cv" href="assets/Pantho-Chaki-CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+          <a class="btn ghost" href="https://wa.me/8801728102345" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn linkedin" href="https://www.linkedin.com/in/panthochaki" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="hero-right" data-reveal>
+        <div class="card profile">
+          <img src="assets/profile.jpg" alt="Pantho Chaki"
+               onerror="this.src='https://ui-avatars.com/api/?name=Pantho+Chaki&size=700&background=050814&color=22d3ee&bold=true'">
+        </div>
+        <div class="proofbar">
+          <div class="proof"><b>SM8-TOP2V (28G)</b><span> production tuning</span></div>
+          <div class="proof"><b>iPolaris</b><span>program logic & zoning</span></div>
+          <div class="proof"><b>Bulk Stability</b><span>Defect prevention focus</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Authority / About -->
+  <section class="section" id="authority">
+    <div class="container">
+      <div class="head" data-reveal>
+        <h2>Technical Authority</h2>
+        <p>Engineering-first execution: Santoni machine logic, tension strategy,
+and controlled fabric behavior from development to bulk production.</p>
+      </div>
+
+      <div class="grid authority">
+        <div class="card" data-reveal>
+          <div class="badgebox">
+            <div class="seal" aria-hidden="true">
+              <img src="https://i.ibb.co.com/twHBgKt1/santoni-logo.png"
+                   alt="Santoni Logo"
+                   style="width: 80%; height: auto; object-fit: contain;">
+            </div>
+            <div>
+              <div style="font-size:1.25rem;font-weight:950;letter-spacing:-.6px">Santoni Seamless Technology & iPolaris</div>
+              <div style="color:var(--muted);font-weight:900;margin-top:2px">Santoni School, Italy (S.p.A) • Feb 2025 • 80 hours</div>
+            </div>
+          </div>
+
+          <div class="meta">
+            <span class="tag">Santoni Certified</span>
+            <span class="tag">SM8-TOP2V program logic</span>
+            <span class="tag">Tension & carrier control</span>
+            <span class="tag">Compression zoning</span>
+            <span class="tag">Bulk stability</span>
+            <span class="tag">Defect prevention</span>
+          </div>
+
+          <p style="color:var(--muted);font-weight:850;line-height:1.75">
+            I execute and stabilize SM8-TOP2V seamless programs for performance
+            garments, translating fit and fabric targets into repeatable machine logic.
+            My work focuses on stitch density control, carrier behavior, compression
+            zoning, and defect elimination to ensure stable output from development
+            through bulk production.
+          </p>
+
+          <ul class="list">
+            <li>GSM & stretch behavior control (pre / post dye)</li>
+            <li>Program stability and defect prevention in bulk</li>
+            <li>Compression zoning aligned with fit requirements</li>
+            <li>Machine logic optimization for consistent output</li>
+          </ul>
+        </div>
+
+        <div class="card brands" data-reveal id="brands">
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:10px;flex-wrap:wrap">
+            <div>
+              <div style="font-size:1.25rem;font-weight:950;letter-spacing:-.6px">Brand Experience</div>
+              <div style="color:var(--muted);font-weight:900;margin-top:2px">Global brand developments & technical trials</div>
+            </div>
+            <div class="pill" style="border-color:rgba(34,211,238,.25)">Production + R&amp;D</div>
+          </div>
+
+          <div class="brandgrid">
+            <div class="brandchip">PUMA <small>Seamless program tuning</small></div>
+            <div class="brandchip">M&amp;S <small>Texture + stability</small></div>
+            <div class="brandchip">Reebok <small>Fit & performance</small></div>
+            <div class="brandchip">AYBL <small>Compression mapping</small></div>
+            <div class="brandchip">Squatwolf <small>Bulk feasibility</small></div>
+          </div>
+
+          <div style="margin-top:18px;color:var(--muted);font-weight:850;line-height:1.7">
+            Current role: <b style="color:var(--text)">Seamless Knit Design Engineer</b> at
+            <b style="color:var(--text)">Fakhruddin Textile Mills Ltd.</b> — 3+ years industrial experience.
+          </div>
+
+          <h3 style="margin-top:28px">Typical Engineering Contributions</h3>
+          <ul class="list">
+            <li>Seamless program tuning for brand-specific fit and performance</li>
+            <li>Texture and stitch structure development for stability</li>
+            <li>Compression mapping aligned with buyer performance targets</li>
+            <li>Bulk feasibility validation and production support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engineering Case Studies -->
+  <section class="section" id="work">
+    <div class="container">
+      <div class="head" data-reveal>
+        <h2>Engineering Case Studies</h2>
+        <p>Brand Programs • R&amp;D Trials • Production-Validated Solutions.</p>
+      </div>
+
+      <div class="tabs" data-reveal>
+        <button class="tab active" data-tab="brand" type="button">Brand Projects</button>
+        <button class="tab" data-tab="trial" type="button">R&amp;D / Texture Trials</button>
+      </div>
+
+      <!-- BRAND -->
+      <div class="cases-grid tab-view active" id="tab-brand">
+        <article class="card case" data-reveal data-id="puma" role="button" tabindex="0" aria-label="Open PUMA case study">
+          <div class="img"><img loading="lazy" src="https://i.ibb.co.com/sX1r96T/puma.png" alt="PUMA case study"></div>
+          <div class="body">
+            <div class="status">PUMA</div>
+            <h3>PUMA — Dare To Women’s Flared Shorts</h3>
+            <p>Optimized seamless program for stable high-speed knitting,
+ensuring bulk-ready output and dimensional consistency.</p>
+            <div class="mini"><span>TOP2V logic</span><span>bulk stability</span><span>defect prevention</span></div>
+          </div>
+        </article>
+
+        <article class="card case" data-reveal data-id="ms" role="button" tabindex="0" aria-label="Open M&amp;S case study">
+          <div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop" alt="M&amp;S case study"></div>
+          <div class="body">
+            <div class="status">Optimized</div>
+            <h3>M&amp;S — Rib Texture + Dimensional Control</h3>
+            <p>Balanced hand-feel and recovery with controlled stitch density and stability validation.</p>
+            <div class="mini"><span>stitch density</span><span>shape retention</span><span>speed-ready</span></div>
+          </div>
+        </article>
+
+        <article class="card case" data-reveal data-id="aybl" role="button" tabindex="0" aria-label="Open AYBL case study">
+          <div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1620799140408-edc6dcb6dcb6d633?q=80&w=1200&auto=format&fit=crop" alt="AYBL case study"></div>
+          <div class="body">
+            <div class="status">Bulk Validated</div>
+            <h3>AYBL — Compression Mapping Build</h3>
+            <p>Engineered zoning &amp; compression mapping aligned to fit targets with stable run behavior.</p>
+            <div class="mini"><span>iPolaris zoning</span><span>compression</span><span>pre/post dye</span></div>
+          </div>
+        </article>
+      </div>
+
+      <!-- TRIAL -->
+      <div class="cases-grid tab-view" id="tab-trial">
+        <article class="card case" data-reveal data-id="honey" role="button" tabindex="0" aria-label="Open Honeycomb trial">
+          <div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?q=80&w=1200&auto=format&fit=crop" alt="Honeycomb trial"></div>
+          <div class="body">
+            <div class="status">R&amp;D Discovery</div>
+            <h3>Honeycomb Relief Map</h3>
+            <p>Multi-depth structure exploration using multi-feed tuck logic for breathable zones.</p>
+            <div class="mini"><span>multi-feed</span><span>tuck logic</span><span>3D surface</span></div>
+          </div>
+        </article>
+
+        <article class="card case" data-reveal data-id="bird" role="button" tabindex="0" aria-label="Open Birdseye trial">
+          <div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1621333104439-419746294713?q=80&w=1200&auto=format&fit=crop" alt="Birdseye trial"></div>
+          <div class="body">
+            <div class="status">Technical Trial</div>
+            <h3>Micro-Birdseye Geometry (28G)</h3>
+            <p>HD surface texture tuning with tension micro-adjustment for defect-free run.</p>
+            <div class="mini"><span>28G precision</span><span>tension tuning</span><span>HD texture</span></div>
+          </div>
+        </article>
+
+        <article class="card case" data-reveal data-id="dev" role="button" tabindex="0" aria-label="Open Baseline control system">
+          <div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop" alt="Baseline control system"></div>
+          <div class="body">
+            <div class="status">Process</div>
+            <h3>Baseline Control System</h3>
+            <p>Structured approach to stabilize GSM/tube width/stretch targets before bulk handover.</p>
+            <div class="mini"><span>baseline SL</span><span>repeatability</span><span>QC mindset</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workflow -->
+  <section class="section" id="workflow">
+    <div class="container">
+      <div class="head" data-reveal>
+        <h2>Technical Workflow</h2>
+        <p>A 7-step workflow built for real factories: audit → structure → machine logic → calibration → dye behavior → fit loop → bulk.</p>
+      </div>
+
+      <div class="grid wf card" data-reveal style="overflow:hidden">
+        <div class="wf-side soft">
+          <button class="wf-btn active" data-step="1" type="button"><div class="num">01</div>Buyer Techpack Analysis</button>
+          <button class="wf-btn" data-step="2" type="button"><div class="num">02</div>Structure Build (iPolaris)</button>
+          <button class="wf-btn" data-step="3" type="button"><div class="num">03</div>Machine Logic (TOP2V)</button>
+          <button class="wf-btn" data-step="4" type="button"><div class="num">04</div>Calibration (GSM/Stretch)</button>
+          <button class="wf-btn" data-step="5" type="button"><div class="num">05</div>Dyeing Evaluation</button>
+          <button class="wf-btn" data-step="6" type="button"><div class="num">06</div>Fit Loop &amp; Mapping</button>
+          <button class="wf-btn" data-step="7" type="button"><div class="num">07</div>Bulk Handover</button>
+        </div>
+
+        <div class="wf-body">
+          <div id="wfTitle"><h3> Buyer Techpack Analysis </h3></div>
+          <p id="wfText">Interpret tech-pack targets (GSM/stretch/hand-feel), confirm feasibility and risk points before development starts.</p>
+          <div class="check" id="wfChecks">
+            <div>Feasibility check (construction + yarn + gauge)</div>
+            <div>Target mapping: GSM / stretch / tube width</div>
+            <div>Risk capture: defects, instability, dye shift</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="head" data-reveal>
+        <h2>Experience &amp; Education</h2>
+        <p>Industrial seamless development + certified Santoni training + textile engineering foundation.</p>
+      </div>
+
+      <div class="grid exp">
+        <div class="card exp-card" data-reveal>
+          <div class="exp-top">
+            <div>
+              <div class="exp-title">Fakhruddin Textile Mills Ltd. — Seamless Knit Design Engineer</div>
+              <div class="exp-sub">2022 — Present • Bangladesh</div>
+            </div>
+            <div class="pill" style="border-color:rgba(34,211,238,.22)">SM8-TOP2V • 28G • iPolaris</div>
+          </div>
+          <p style="color:var(--muted);font-weight:850;line-height:1.75">
+            End-to-end development and production support for global seamless programs: stability control, technical optimization,
+            and repeatable output for bulk.
+          </p>
+          <ul class="exp-bullets">
+            <li>Program development + troubleshooting for production stability and defect elimination</li>
+            <li>GSM/tube width/stretch control with structured calibration approach</li>
+            <li>Compression mapping and zoning alignment to fit targets</li>
+            <li>Pre/post dye behavior monitoring and program adjustments</li>
+          </ul>
+        </div>
+
+        <div class="card exp-card" data-reveal>
+          <div class="exp-top">
+            <div>
+              <div class="exp-title">Santoni School, Italy (S.p.A) — Intensive Training</div>
+              <div class="exp-sub">Feb 2025 • 80 Hours • SM8-TOP2V + iPolaris</div>
+            </div>
+            <div class="pill" style="border-color:rgba(52,211,153,.25)">Certified</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Machine logic understanding for selection, stability, and defect prevention</li>
+            <li>Technical iPolaris workflow for structure build and production-ready programming</li>
+            <li>Calibration mindset: controlled fabric behavior against performance targets</li>
+          </ul>
+        </div>
+
+        <div class="card exp-card" data-reveal>
+          <div class="exp-top">
+            <div>
+              <div class="exp-title">NITER — B.Sc. in Textile Engineering</div>
+              <div class="exp-sub">CGPA: 3.70 / 4.00</div>
+            </div>
+            <div class="pill" style="border-color:rgba(129,140,248,.25)">Engineering Foundation</div>
+          </div>
+          <p style="color:var(--muted);font-weight:850;line-height:1.75">
+            Strong engineering foundation in textiles, materials, and production systems — applied directly to seamless manufacturing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="head" data-reveal>
+        <h2>Core Skill Stack</h2>
+        <p>Focused on high-value factory outcomes: stability, repeatability, and controlled performance targets.</p>
+      </div>
+
+      <div class="grid skills">
+        <div class="card skill" data-reveal>
+          <h4>SM8-TOP2V Programming &amp; Stability</h4>
+          <p>Defect prevention, selection logic control, run stability, repeatable high-speed output.</p>
+          <div class="bar"><span data-bar="92"></span></div>
+        </div>
+        <div class="card skill" data-reveal>
+          <h4>iPolaris Structure Build</h4>
+          <p>Zoning, artwork alignment, structure feasibility, and production-ready program setup.</p>
+          <div class="bar"><span data-bar="88"></span></div>
+        </div>
+        <div class="card skill" data-reveal>
+          <h4>GSM / Stretch / Dye Behavior Control</h4>
+          <p>Calibration mindset across development → dye → size-set → bulk support.</p>
+          <div class="bar"><span data-bar="90"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="head" data-reveal>
+        <h2>Start a Project</h2>
+        <p>Industrial collaboration, technical consultation, or career opportunities.</p>
+      </div>
+
+      <div class="grid contact">
+        <div class="card form" data-reveal>
+          <form id="contactForm">
+            <div class="field">
+              <label for="fullName">Full Name</label>
+              <input id="fullName" type="text" placeholder="Your name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input id="email" type="email" placeholder="email@company.com" required />
+            </div>
+            <div class="field">
+              <label for="msg">Message</label>
+              <textarea id="msg" rows="5" placeholder="Tell me your product, yarn, GSM/stretch targets, and timeline..." required></textarea>
+            </div>
+            <button class="btn primary" style="width:100%" type="submit">Send Message</button>
+            <div style="margin-top:12px;color:var(--muted);font-weight:850;font-size:.92rem">
+              Tip: If you include yarn counts + dia + SL target, I can estimate feasibility fast.
+            </div>
+          </form>
+        </div>
+
+        <div class="card contactbox" data-reveal>
+          <h3>Direct Contact</h3>
+          <p>Fastest response via WhatsApp or LinkedIn.</p>
+
+          <div class="contactitem">
+            <small>Email</small>
+            <b>panthochaki12@gmail.com</b>
+          </div>
+          <div class="contactitem" style="margin-top:10px">
+            <small>WhatsApp</small>
+            <b>+880 1728-102345</b>
+          </div>
+          <div class="contactitem" style="margin-top:10px">
+            <small>LinkedIn</small>
+            <b>Pantho Chaki</b>
+          </div>
+
+          <div class="contactactions">
+            <a class="btn" href="https://www.linkedin.com/in/panthochaki" target="_blank" rel="noopener">Open LinkedIn</a>
+            <a class="btn" href="https://wa.me/8801728102345" target="_blank" rel="noopener">Message WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> Pantho Chaki • Seamless Knit Design Engineer • Santoni School Italy Trained
+    </div>
+  </footer>
+
+  <!-- ✅ Modal (UPDATED TO MATCH YOUR 2ND PIC) -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <button class="m-close" id="mClose" aria-label="Close">&times;</button>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-label="Case study details">
+      <div class="m-left"><img id="mImg" src="" alt="Case image"></div>
+      <div class="m-right">
+        <div class="status" id="mStatus">Validated</div>
+        <h2 id="mTitle">Title</h2>
+
+        <!-- ✅ Brand/Product block -->
+        <div class="m-meta" id="mMeta"></div>
+
+        <!-- ✅ Heading like 2nd pic -->
+        <div class="m-subhead">My Role &amp; Technical Contribution:</div>
+
+        <!-- ✅ Bullet list -->
+        <ul class="m-ul" id="mList"></ul>
+
+        <!-- ✅ Summary line -->
+        <p class="m-desc" id="mDesc"></p>
+
+        <div class="m-actions">
+          <a class="btn primary" id="mLink" href="#" target="_blank" rel="noopener">Open Reference</a>
+          <a class="btn ghost" href="#contact" id="mContact">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Theme (persist)
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+
+    const applyTheme = (t) => {
+      root.setAttribute('data-theme', t);
+      try { localStorage.setItem('theme', t); } catch {}
+    };
+
+    try {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark' || saved === 'light') applyTheme(saved);
+    } catch {}
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      applyTheme(isDark ? 'light' : 'dark');
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+    // Mobile menu
+    const sheet = document.getElementById('sheet');
+    document.getElementById('openMenu').addEventListener('click', () => sheet.classList.add('active'));
+    document.getElementById('closeMenu').addEventListener('click', () => sheet.classList.remove('active'));
+    sheet.addEventListener('click', (e) => { if(e.target === sheet) sheet.classList.remove('active'); });
+    document.querySelectorAll('.sheetLink').forEach(a => a.addEventListener('click', () => sheet.classList.remove('active')));
+
+    // Tabs
+    const tabButtons = document.querySelectorAll('.tab');
+    const tabViews = {
+      brand: document.getElementById('tab-brand'),
+      trial: document.getElementById('tab-trial')
+    };
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => b.classList.remove('active'));
+        Object.values(tabViews).forEach(v => v.classList.remove('active'));
+        btn.classList.add('active');
+        tabViews[btn.dataset.tab].classList.add('active');
+      });
+    });
+
+    // Workflow
+    const wf = {
+      1: { title:"Buyer Techpack Analysis", text:"Interpret tech-pack targets (Design/Outlook/Fabric/GSM), confirm feasibility, and lock risk points before development starts.", checks:["Feasibility: structure + yarn + gauge","Target mapping: GSM / stretch / tube width","Risk capture: defects + dye shift + instability"] },
+      2: { title:"Structure Build (iPolaris)", text:"Create zoning, artwork alignment, and technical structure layout designed for stability and fit targets.", checks:["Zoning + compression map alignment","Feeder plan and structure feasibility","Avoidance plan for known defect zones"] },
+      3: { title:"Machine Logic (TOP2V)", text:"Build machine logic for repeatable output: selection behavior, carrier movement, stitch density and tension strategy.", checks:["Selection logic for knit/tuck/float control","Carrier movement optimization","Stitch density control for stability"] },
+      4: { title:"Calibration (GSM / Stretch)", text:"Verify tube width, GSM and stretch behavior pre-dye; correct program parameters to hit target ranges.", checks:["Tube width & dimensional stability check","GSM correction via program tuning","Stretch behavior verification vs target"] },
+      5: { title:"Dyeing Evaluation", text:"Monitor post-dye behavior and hand-feel; adjust parameters to keep GSM/stretch within approved window.", checks:["Pre vs post dye comparison","Shrink / recovery behavior tracking","Hand-feel vs target confirmation"] },
+      6: { title:"Fit Loop & Mapping", text:"Apply compression tuning and fit corrections iteratively until size-set approval and repeatability are achieved.", checks:["Compression map tuning by zone","Fit trial feedback conversion to logic","Repeatability confirmation"] },
+      7: { title:"Bulk Handover", text:"Deliver a stable program with defect control plan; support production to maintain speed and quality.", checks:["Zero-defect setup notes","Operator-friendly handover checklist","Bulk support for stability + speed"] }
+    };
+    const wfTitle = document.getElementById('wfTitle');
+    const wfText = document.getElementById('wfText');
+    const wfChecks = document.getElementById('wfChecks');
+    document.querySelectorAll('.wf-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.wf-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const d = wf[btn.dataset.step];
+        wfTitle.innerHTML = `<h3>${d.title}</h3>`;
+        wfText.textContent = d.text;
+        wfChecks.innerHTML = d.checks.map(x => `<div>${x}</div>`).join('');
+      });
+    });
+
+    // Skills bars
+    const barIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(!e.isIntersecting) return;
+        const span = e.target;
+        span.style.width = (span.dataset.bar || 0) + "%";
+        barIO.unobserve(span);
+      });
+    }, { threshold: 0.35 });
+    document.querySelectorAll('[data-bar]').forEach(s => barIO.observe(s));
+
+    // ✅ Modal DB (UPDATED for 2nd pic style)
+    const db = {
+      puma: {
+        status: "PUMA",
+        title: "PUMA — Dare To Women’s Flared Shorts",
+        brand: "PUMA",
+        product: "Dare To Women’s Flared Shorts",
+        img: "https://i.ibb.co.com/sX1r96T/puma.png",
+        points: [
+          "Developed seamless program and optimized structure using iPolaris",
+          "Tuned stitch density and carrier logic for fit and flexibility",
+          "Ensured dimensional stability and consistent quality for bulk production"
+        ],
+        desc: "Production-ready program tuning with stable bulk behavior and repeatable output.",
+        link: "https://sg.puma.com/sg/en/pd/dare-to-womens-flared-shorts/627876.html"
+      },
+      ms: {
+        status:"Optimized",
+        title:"M&S — Rib Texture + Dimensional Control",
+        brand:"M&S",
+        product:"Rib Texture + Dimensional Control",
+        img:"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1600&auto=format&fit=crop",
+        points:[
+          "Balanced rib texture with recovery and hand-feel targets",
+          "Controlled stitch density and stability calibration",
+          "Validated dimensional stability for repeatability in production"
+        ],
+        desc:"Balanced texture aesthetics with production constraints and stability requirements.",
+        link:"https://www.marksandspencer.com/"
+      },
+      aybl: {
+        status:"Bulk Validated",
+        title:"AYBL — Compression Mapping Build",
+        brand:"AYBL",
+        product:"Compression Mapping Build",
+        img:"https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1600&auto=format&fit=crop",
+        points:[
+          "Defined zoning and compression map aligned to fit targets",
+          "Stabilized program logic for repeatable run behavior",
+          "Checked fabric behavior pre/post dye for stable outcome"
+        ],
+        desc:"Engineered zone behavior with stable run and controlled fabric performance.",
+        link:"https://www.beaybl.com/"
+      },
+      honey: {
+        status:"R&D Discovery",
+        title:"Honeycomb Relief Map",
+        brand:"R&D / Texture",
+        product:"Honeycomb Relief Structure",
+        img:"https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?q=80&w=1600&auto=format&fit=crop",
+        points:[
+          "Explored breathable zoning using multi-feed tuck logic",
+          "Mapped depth variation while keeping run stability",
+          "Created feasibility notes for production adaptation"
+        ],
+        desc:"R&D exploration into multi-depth structures on 28G constraints.",
+        link:"#"
+      },
+      bird: {
+        status:"Technical Trial",
+        title:"Micro-Birdseye Geometry (28G)",
+        brand:"R&D / Texture",
+        product:"Micro-Birdseye Geometry",
+        img:"https://images.unsplash.com/photo-1621333104439-419746294713?q=80&w=1600&auto=format&fit=crop",
+        points:[
+          "Tuned HD surface texture with stable selection behavior",
+          "Adjusted tension micro-parameters to prevent defects",
+          "Verified consistent output on 28G constraints"
+        ],
+        desc:"Texture trial focusing on precision behavior at 28G.",
+        link:"#"
+      },
+      dev: {
+        status:"Process",
+        title:"Baseline Control System",
+        brand:"Process / System",
+        product:"Baseline GSM/Width/Stretch Control",
+        img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1600&auto=format&fit=crop",
+        points:[
+          "Defined baseline targets for GSM, tube width, and stretch",
+          "Built repeatable correction loop for stability",
+          "Standardized handover notes for operator-friendly production"
+        ],
+        desc:"A structured baseline approach to stabilize outcomes across different structures and yarn setups.",
+        link:"#"
+      }
+    };
+
+    const modal = document.getElementById('modal');
+    const mImg = document.getElementById('mImg');
+    const mTitle = document.getElementById('mTitle');
+    const mStatus = document.getElementById('mStatus');
+    const mMeta = document.getElementById('mMeta');
+    const mList = document.getElementById('mList');
+    const mDesc = document.getElementById('mDesc');
+    const mLink = document.getElementById('mLink');
+
+    const openModal = (id) => {
+      const d = db[id];
+      if(!d) return;
+
+      mImg.src = d.img;
+      mTitle.textContent = d.title;
+      mStatus.textContent = d.status;
+
+      // ✅ Brand + Product block like your 2nd pic
+      const brandLine = d.brand ? `<b>Brand:</b> ${d.brand}` : "";
+      const prodLine  = d.product ? `<b>Product:</b> ${d.product}` : "";
+      mMeta.innerHTML = `${brandLine}${brandLine && prodLine ? "<br>" : ""}${prodLine}`;
+
+      // ✅ Bullet points
+      mList.innerHTML = (d.points || []).map(x => `<li>${x}</li>`).join('');
+
+      // ✅ Summary line
+      mDesc.textContent = d.desc || "";
+
+      // Link
+      if(!d.link || d.link === '#'){ mLink.style.display = 'none'; }
+      else { mLink.style.display = 'inline-flex'; mLink.href = d.link; }
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    };
+
+    document.querySelectorAll('.case').forEach(card => {
+      card.addEventListener('click', () => openModal(card.dataset.id));
+      card.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.dataset.id); }
+      });
+    });
+
+    document.getElementById('mClose').addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
+    window.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
+
+    // Contact form (mailto)
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('msg').value.trim();
+      const subject = encodeURIComponent(`Portfolio Inquiry — ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${msg}\n\n— Sent from portfolio website`);
+      window.location.href = `mailto:panthochaki12@gmail.com?subject=${subject}&body=${body}`;
+    });
+
+    // Nav active highlight
+    const sections = [...document.querySelectorAll('section[id]')];
+    const navAnchors = [...document.querySelectorAll('.navlinks a')];
+    const setActive = (id) => navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${id}`));
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(en => { if(en.isIntersecting) setActive(en.target.id); });
+    }, { rootMargin: "-35% 0px -55% 0px", threshold: 0.01 });
+    sections.forEach(s => spy.observe(s));
+  </script>
+</body>
+</html>
